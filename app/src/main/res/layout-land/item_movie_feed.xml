@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/list_view_padding"
+    android:paddingBottom="@dimen/list_view_padding">
+
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/movieBackDrop"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:paddingLeft="@dimen/land_movie_padding_left"
+        android:paddingRight="@dimen/land_movie_padding_left"
+        android:scaleType="fitXY"
+        tools:src="@mipmap/ic_launcher"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/movie_title_padding_top"
+        android:id="@+id/movieTitle"
+        style="@style/movieFeedTitle"
+        tools:text="The Magnificent Seven"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/movieBackDrop"
+        android:layout_toEndOf="@+id/movieBackDrop"/>
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/movieRating"
+        android:isIndicator="true"
+        android:numStars="10"
+        android:stepSize="0.1"
+        tools:numStars="4"
+        style="@style/Base.Widget.AppCompat.RatingBar.Small"
+        android:layout_below="@+id/movieTitle"
+        android:layout_alignLeft="@+id/movieTitle"
+        android:layout_alignStart="@+id/movieTitle"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/movieSynopsis"
+        tools:text="Synopsis of the movie"
+        style="@style/movieFeedText"
+        android:layout_below="@+id/movieRating"
+        android:layout_alignLeft="@+id/movieTitle"
+        android:layout_alignStart="@+id/movieTitle"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/release_date"
+        android:id="@+id/releaseDateLabel"
+        tools:text="Release Date"
+        style="@style/movieFeedText"
+        android:paddingTop="@dimen/land_movie_release_date_padding_top"
+        android:paddingBottom="@dimen/land_movie_release_date_padding_top"
+        android:layout_below="@+id/movieSynopsis"
+        android:layout_toRightOf="@+id/movieBackDrop"
+        android:layout_toEndOf="@+id/movieBackDrop"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/releaseDate"
+        tools:text="2016-09-04"
+        style="@style/movieFeedText"
+        android:padding="@dimen/land_movie_release_date_padding_top"
+        android:layout_below="@+id/movieSynopsis"
+        android:layout_toRightOf="@+id/releaseDateLabel"
+        android:layout_toEndOf="@+id/releaseDateLabel"/>
+
+
+</RelativeLayout>

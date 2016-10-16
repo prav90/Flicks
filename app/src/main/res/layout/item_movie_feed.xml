@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/list_view_padding"
+    android:background="@android:color/background_light">
+
+
+    <ImageView
+        android:layout_width="400dp"
+        android:layout_height="200dp"
+        android:id="@+id/movieBackDrop"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:scaleType="fitXY"
+        tools:src="@mipmap/ic_launcher"
+        />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/moviePlayOverlay"
+        android:scaleType="center"
+        android:src="@drawable/play_overlay"
+        tools:src="@drawable/play_overlay"
+        android:layout_alignBottom="@+id/movieBackDrop"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="43dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/movie_text_padding"
+        android:paddingRight="@dimen/movie_text_padding"
+        android:paddingTop="@dimen/movie_title_padding_top"
+        android:text="Medium Text"
+        android:id="@+id/movieTitle"
+        android:layout_below="@+id/movieBackDrop"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        style="@style/movieFeedTitle"
+        tools:text="The Magnificent Seven"/>
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/movieRating"
+        android:isIndicator="true"
+        android:numStars="10"
+        android:stepSize="0.1"
+        tools:numStars="4"
+        style="@style/Base.Widget.AppCompat.RatingBar.Small"
+        android:paddingLeft="@dimen/movie_text_padding"
+        android:paddingRight="@dimen/movie_text_padding"
+        android:layout_below="@+id/movieTitle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/movie_text_padding"
+        android:paddingRight="@dimen/movie_text_padding"
+        android:text="@string/release_date"
+        android:id="@+id/releaseDateLabel"
+        tools:text="Release Date"
+        style="@style/movieFeedText"
+        android:layout_alignTop="@+id/releaseDate"
+        android:layout_toLeftOf="@+id/releaseDate"
+        android:layout_toStartOf="@+id/releaseDate"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/releaseDate"
+        tools:text="2016-09-04"
+        style="@style/movieFeedText"
+        android:paddingLeft="@dimen/movie_release_date_padding"
+        android:paddingRight="@dimen/movie_release_date_padding"
+        android:layout_below="@+id/movieTitle"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
+
+</RelativeLayout>

@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Flicks</string>
+    <string name="release_date">Release Date</string>
+    <string name="now_playing_url">
+        https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed
+    </string>
+    <string name="popular_movies_url">
+        https://api.themoviedb.org/3/movie/popular?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed
+    </string>
+    <string name="flicks_now_playing_title">Flicks - Now Playing</string>
+    <string name="flicks_popular_title">Flicks - Popular</string>
+</resources>
