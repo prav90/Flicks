@@ -35,8 +35,8 @@ The following **bonus** features are implemented:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
-<img src='http://i.imgur.com/xEnGVAm.gif' title='Portrait Walkthrough' width='' alt='portrait Walkthrough' />
 <img src='http://i.imgur.com/oR9iOo7.gif' title='Landscape Walkthrough' width='' alt='landscape Walkthrough' />
+<img src='http://i.imgur.com/BQbYx3o.gif' title='Portrait Walkthrough' width='' alt='portrait Walkthrough' />
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
