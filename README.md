@@ -35,8 +35,8 @@ The following **bonus** features are implemented:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
-<img src='http://i.imgur.com/oR9iOo7.gif' title='Landscape Walkthrough' width='' alt='landscape Walkthrough' />
-<a href="http://imgur.com/BQbYx3o">Portait Mode Walkthrough</a>
+<img src='http://i.imgur.com/oR9iOo7.gif' title='Landscape Walkthrough' width='' alt='landscape Walkthrough' /> <br/>
+<a href="http://imgur.com/BQbYx3o">Portait Mode Walkthrough</a> <br/>
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
