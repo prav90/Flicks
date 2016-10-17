@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:paddingTop="@dimen/list_view_padding"
-    android:paddingBottom="@dimen/list_view_padding">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
 
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <com.google.android.youtube.player.YouTubePlayerView
+        android:id="@+id/player"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:screenOrientation="landscape"/>
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:id="@+id/movieBackDrop"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/player"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:paddingLeft="@dimen/land_movie_padding_left"
@@ -29,7 +31,7 @@
         android:id="@+id/movieTitle"
         style="@style/movieFeedTitle"
         tools:text="The Magnificent Seven"
-        android:layout_alignParentTop="true"
+        android:layout_alignTop="@+id/movieBackDrop"
         android:layout_toRightOf="@+id/movieBackDrop"
         android:layout_toEndOf="@+id/movieBackDrop"/>
 
@@ -52,9 +54,10 @@
         android:id="@+id/movieSynopsis"
         tools:text="Synopsis of the movie"
         style="@style/movieFeedText"
-        android:layout_below="@+id/movieRating"
-        android:layout_alignLeft="@+id/movieTitle"
-        android:layout_alignStart="@+id/movieTitle"/>
+        android:padding="@dimen/land_movie_release_date_padding_top"
+        android:layout_below="@+id/movieBackDrop"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -65,34 +68,19 @@
         style="@style/movieFeedText"
         android:paddingTop="@dimen/land_movie_release_date_padding_top"
         android:paddingBottom="@dimen/land_movie_release_date_padding_top"
-        android:layout_below="@+id/movieSynopsis"
+        android:layout_alignTop="@+id/movieRating"
         android:layout_toRightOf="@+id/movieBackDrop"
         android:layout_toEndOf="@+id/movieBackDrop"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
         android:id="@+id/releaseDate"
         tools:text="2016-09-04"
         style="@style/movieFeedText"
         android:padding="@dimen/land_movie_release_date_padding_top"
-        android:layout_below="@+id/movieSynopsis"
+        android:layout_alignTop="@+id/releaseDateLabel"
         android:layout_toRightOf="@+id/releaseDateLabel"
         android:layout_toEndOf="@+id/releaseDateLabel"/>
-
-    <ImageView
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:id="@+id/moviePlayIconLandscape"
-        android:scaleType="fitXY"
-        android:src="@drawable/play_overlay"
-        tools:src="@drawable/play_overlay"
-        android:layout_alignTop="@+id/movieSynopsis"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="36dp"
-        android:layout_marginStart="36dp"/>
-
 
 </RelativeLayout>

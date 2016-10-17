@@ -1,6 +1,7 @@
 package com.codepath.flicks.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -12,8 +13,11 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.codepath.flicks.R;
+import com.codepath.flicks.activities.YoutubePlayerActivity;
 import com.codepath.flicks.models.Movie;
 import com.squareup.picasso.Picasso;
+
+import org.parceler.Parcels;
 
 import java.util.List;
 
@@ -43,7 +47,7 @@ public class FeedMovieAdapter extends ArrayAdapter<Movie> {
 
   @Override
   public View getView(int position, View convertView, ViewGroup parent) {
-    Movie movie = getItem(position);
+    final Movie movie = getItem(position);
 
     ViewHolder viewHolder;
     if (convertView == null) {
@@ -65,18 +69,27 @@ public class FeedMovieAdapter extends ArrayAdapter<Movie> {
       imageURL = movie.getPosterImage();
       viewHolder.tvSynopsis.setText(movie.getOverview());
       Picasso.with(getContext())
-      .load(imageURL)
-      .transform(new RoundedCornersTransformation(10, 10))
-      .placeholder(R.drawable.placeholder)
-      .error(R.drawable.placeholder)
-      .into(viewHolder.ivMovieImage);
+        .load(imageURL)
+        .transform(new RoundedCornersTransformation(10, 10))
+        .placeholder(R.drawable.placeholder)
+        .error(R.drawable.placeholder)
+        .into(viewHolder.ivMovieImage);
     } else {
       Picasso.with(getContext())
-      .load(imageURL)
-      .placeholder(R.drawable.placeholder)
-      .error(R.drawable.placeholder)
-      .into(viewHolder.ivMovieImage);
+        .load(imageURL)
+        .placeholder(R.drawable.placeholder)
+        .error(R.drawable.placeholder)
+        .into(viewHolder.ivMovieImage);
     }
+
+    viewHolder.ivMovieImage.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        Intent intent = new Intent(getContext(), YoutubePlayerActivity.class);
+        intent.putExtra("movie", Parcels.wrap(movie));
+        getContext().startActivity(intent);
+      }
+    });
 
     viewHolder.tvMovieTitle.setText(movie.getTitle());
     viewHolder.tvReleaseDate.setText(movie.getReleaseDate());
